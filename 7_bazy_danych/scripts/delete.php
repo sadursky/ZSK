@@ -9,14 +9,15 @@
     $sql = "DELETE FROM `users` WHERE `users`.`user_id` = $id";
     $result = $connect->query($sql);
     if ($connect->affected_rows) {
-      header("location: ../1_bazy_tabela_delete.php?deletedUser=$id");
+      // header("location: ../1_bazy_tabela_delete.php?deletedUser=$id");
+      header("location: ../1_bazy_tabela_delete_insert.php?deletedUser=$id");
     }
     else {
       echo "Nie usunięto rekordu";
     }
   }
   else {
-    header('location: ../1_bazy_tabela_delete.php');
+    header('location: ../1_bazy_tabela_delete_insert.php');
   }
 
 
