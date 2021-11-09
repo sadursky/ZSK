@@ -53,7 +53,7 @@
              <select name="city_id">
         FORMADDUSER;
         $sql="SELECT * FROM `cities` ORDER BY `city`";
-        $result=$connect->query();
+        $result=$connect->query($sql);
         while ($city=$result->fetch_assoc()) {
           echo "<option value=\"$city[city_id]\">$city[city]</option>";
         }
