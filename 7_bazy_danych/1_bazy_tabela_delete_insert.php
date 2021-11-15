@@ -9,7 +9,7 @@
     <h3>Użytkownicy</h3>
     <?php
       require_once './scripts/connect.php';
-      $sql = "SELECT users.user_id, users.city_id, users.name, users.surname, users.birthday, cities.city FROM `users` INNER JOIN `cities` ON users.city_id=cities.city_id;";
+      $sql = "SELECT users.user_id, users.city_id, users.name, users.surname, users.birthday, cities.city FROM `users` INNER JOIN `cities` ON users.city_id=cities.city_id ORDER BY users.user_id;";
       $result = $connect->query($sql);
 
       if (isset($_GET['deletedUser'])) {
@@ -61,12 +61,12 @@
 
           echo <<< FORMADDUSER
              </select>
-             <input type="text" name="city_id" placeholder="Podaj id miasta"><br><br>
+             <br><br>
              <input type="submit" value="Dodaj użytkownika">
           </form>
         FORMADDUSER;
       }
-      else echo '<a href="./1_bazy_tabela_delete_insert.php?addUser=">Dodaj użytkownika</a>';
+      else echo '<br><a href="./1_bazy_tabela_delete_insert.php?addUser=">Dodaj użytkownika</a>';
 
 
      ?>

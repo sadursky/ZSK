@@ -12,7 +12,7 @@
     $connect->query($sql);
 
     if($connect->affected_rows == 1) {
-      header('location: ./1_bazy_tabela_delete_insert.php?error=Prawidłowo dodano użytkownika!');
+      header('location: ../1_bazy_tabela_delete_insert.php?error=Prawidłowo dodano użytkownika!');
     }
     else {
       header('location: ./1_bazy_tabela_delete_insert.php?error=Nie dodano użytkownika!&addUser=');
